@@ -6,19 +6,19 @@ const i18n = createI18n({
   messages: {
     es: {
       // Definir mensajes en español
-      title: "Poke Lista",
-      subtitle: "Este poke es ",
-      abilities: "Habilidades",
-      held: "Objetos retenidos",
-      moves: "Movimientos"
+      title: 'Poke Lista',
+      subtitle: 'Este poke es ',
+      abilities: 'Habilidades',
+      held: 'Objetos retenidos',
+      moves: 'Movimientos',
     },
     en: {
       // Definir mensajes en inglés
-      title: "Poke List",
-      subtitle: "This poke is ",
-      abilities: "Abilities",
-      held: "Held items",
-      moves: "Moves"
+      title: 'Poke List',
+      subtitle: 'This poke is ',
+      abilities: 'Abilities',
+      held: 'Held items',
+      moves: 'Moves',
     },
   },
 });

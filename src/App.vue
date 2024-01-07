@@ -1,9 +1,13 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-  <router-view />
+  <div class="container">
+    <router-view />
+  </div>
 </template>
 
 <style scoped>
+.container {
+  width: 86vw;
+}
 </style>

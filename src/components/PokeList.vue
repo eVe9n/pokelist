@@ -1,27 +1,29 @@
 <script setup>
 import { usePokeDataStore } from './../stores/pokeDataStore';
-import router from './../router'
+import router from './../router';
 
 const pokeData = usePokeDataStore();
-let nameFilter = ''
-let typeFilter = ''
+let nameFilter = '';
+let typeFilter = '';
 
-pokeData.getPokeListApi()
+pokeData.getPokeListApi();
 
 const openPoke = (pokeName) => {
-  router.push({path: '/pokeone/' + pokeName})
-}
+  router.push({ path: '/pokeone/' + pokeName });
+};
 
 const searchByName = () => {
-  pokeData.addPokeList(pokeData.pokeDataListOriginal.filter(e => {
-    return e.name.toLowerCase().includes(nameFilter.toLowerCase())
-  }))
-}
+  pokeData.addPokeList(
+    pokeData.pokeDataListOriginal.filter((e) => {
+      return e.name.toLowerCase().includes(nameFilter.toLowerCase());
+    }),
+  );
+};
 
 const searchByType = (pokeType) => {
-  typeFilter = pokeType
-  pokeData.getPokeSearchedApiByType(pokeType)
-}
+  typeFilter = pokeType;
+  pokeData.getPokeSearchedApiByType(pokeType);
+};
 </script>
 
 <template>
@@ -29,15 +31,23 @@ const searchByType = (pokeType) => {
   <div class="filters-container">
     <h3>Filters</h3>
     <div class="filter">
-      <label>Name
-        <input type="text" v-model="nameFilter" @input="searchByName">
+      <label
+        >Name
+        <input type="text" v-model="nameFilter" @input="searchByName" />
       </label>
     </div>
     <div class="filter">
-      <div v-for="(type, index) in pokeData.typesFilter" :key="index" @click="searchByType(type.name)"
-        :class="['type-filter', {
-          typeSelected: type.name == typeFilter
-        }]">
+      <div
+        v-for="(type, index) in pokeData.typesFilter"
+        :key="index"
+        @click="searchByType(type.name)"
+        :class="[
+          'type-filter',
+          {
+            typeSelected: type.name == typeFilter,
+          },
+        ]"
+      >
         {{ type.name }}
       </div>
     </div>
@@ -64,7 +74,7 @@ const searchByType = (pokeType) => {
 .pokelist-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   gap: 2vw;
   width: 86vw;
   height: 50vh;
