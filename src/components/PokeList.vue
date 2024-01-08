@@ -76,7 +76,6 @@ const searchByType = (pokeType) => {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2vw;
-  width: 86vw;
   height: 50vh;
   overflow: auto;
 }
